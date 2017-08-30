@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 #importando modulo de conexão com o banco mysql
-import MySQLdb 
+import pymysql
 #setando as configurações do banco
 servidor ="localhost"
 usuario ="root"
-senha ="root"
+senha =""
 banco ="biblioteca"
-#fazendo a conexão com o banco de dados
-db = MySQLdb.connect(servidor, usuario, senha, banco)
+# Fazando a conexão com o banco de dados
+pymysql.install_as_MySQLdb()
+db = pymysql.connect(servidor, usuario, senha, banco)
 cursor = db.cursor()
 #Função para executar os comandos sql
 def executa_sql(pSQL):
